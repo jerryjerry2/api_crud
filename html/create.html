@@ -58,7 +58,20 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.3.2/mdb.umd.min.js"></script>
 
     <script>
-      fetch('https://api-crud-yrvv.onrender.com/api/tutorials')
+    fetch('http://localhost:8080/api/tutorials',{
+            method:"POST",
+            headers: {
+              'Accept': 'application/json',
+              'Content-Type': 'application/json'
+            },
+            body:JSON.stringify(
+                {
+                    title: 'test product',
+                    description: 'lorem ipsum set',
+                    published: 1
+                }
+            )
+        })
             .then(res=>res.json())
             .then(json=>console.log(json))
     </script>
