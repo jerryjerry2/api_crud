@@ -1,5 +1,7 @@
 const express = require("express");
 // const bodyParser = require("body-parser"); /* deprecated */
+const dotenv = require('dotenv');
+dotenv.config({ path: './.env' });
 const cors = require("cors");
 
 const app = express();
