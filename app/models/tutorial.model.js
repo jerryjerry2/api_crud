@@ -21,7 +21,7 @@ Tutorial.create = (newTutorial, result) => {
 };
 
 Tutorial.findById = (id, result) => {
-  sql.query(`SELECT * FROM tutorials WHERE id = ${id} order by id desc`, (err, res) => {
+  sql.query(`SELECT * FROM tutorials WHERE id = ${id} `, (err, res) => {
     if (err) {
       console.log("error: ", err);
       result(err, null);
@@ -40,7 +40,7 @@ Tutorial.findById = (id, result) => {
 };
 
 Tutorial.getAll = (title, result) => {
-  let query = "SELECT * FROM tutorials";
+  let query = "SELECT * FROM tutorials order by id desc";
 
   if (title) {
     query += ` WHERE title LIKE '%${title}%'`;
