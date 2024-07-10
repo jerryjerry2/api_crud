@@ -15,132 +15,129 @@
 
 <body>
 	<div class="container">
-		
+		<!-- Navbar -->
+		<nav class="navbar navbar-expand-lg navbar-light bg-body-tertiary mt-5">
+			<!-- Container wrapper -->
+			<div class="container">
+				<!-- Navbar brand -->
+				<a class="navbar-brand me-2" href="https://mdbgo.com/">
+					<img src="https://mdbcdn.b-cdn.net/img/logo/mdb-transaprent-noshadows.webp" height="16"
+						alt="MDB Logo" loading="lazy" style="margin-top: -1px;" />
+				</a>
 
-		
+				<!-- Toggle button -->
+				<button data-mdb-collapse-init class="navbar-toggler" type="button"
+					data-mdb-target="#navbarButtonsExample" aria-controls="navbarButtonsExample" aria-expanded="false"
+					aria-label="Toggle navigation">
+					<i class="fas fa-bars"></i>
+				</button>
 
-		
-			<!-- Navbar -->
-			<nav class="navbar navbar-expand-lg navbar-light bg-body-tertiary mt-5">
-				<!-- Container wrapper -->
-				<div class="container">
-					<!-- Navbar brand -->
-					<a class="navbar-brand me-2" href="https://mdbgo.com/">
-						<img src="https://mdbcdn.b-cdn.net/img/logo/mdb-transaprent-noshadows.webp" height="16"
-							alt="MDB Logo" loading="lazy" style="margin-top: -1px;" />
-					</a>
+				<!-- Collapsible wrapper -->
+				<div class="collapse navbar-collapse" id="navbarButtonsExample">
+					<!-- Left links -->
+					<ul class="navbar-nav me-auto ">
+						<li class="nav-item align-items-center">
+							<a class="nav-link " href="#">ANT Training Center</a>
+						</li>
+					</ul>
+					<!-- Left links -->
 
-					<!-- Toggle button -->
-					<button data-mdb-collapse-init class="navbar-toggler" type="button"
-						data-mdb-target="#navbarButtonsExample" aria-controls="navbarButtonsExample"
-						aria-expanded="false" aria-label="Toggle navigation">
-						<i class="fas fa-bars"></i>
-					</button>
+					<div class="d-flex align-items-center">
 
-					<!-- Collapsible wrapper -->
-					<div class="collapse navbar-collapse" id="navbarButtonsExample">
-						<!-- Left links -->
-						<ul class="navbar-nav me-auto ">
-							<li class="nav-item align-items-center">
-								<a class="nav-link " href="#">ANT Training Center</a>
-							</li>
-						</ul>
-						<!-- Left links -->
+						<button type="button" data-mdb-ripple-init data-mdb-modal-init data-mdb-target="#exampleModal" class="btn btn-primary me-3 bAdd">
+							Add
+						</button>
 
-						<div class="d-flex align-items-center">
-
-							<button data-mdb-ripple-init type="button" class="btn btn-primary me-3">
-								Add
-							</button>
-
-						</div>
 					</div>
-					<!-- Collapsible wrapper -->
 				</div>
-				<!-- Container wrapper -->
-			</nav>
-			<!-- Navbar -->
+				<!-- Collapsible wrapper -->
+			</div>
+			<!-- Container wrapper -->
+		</nav>
+		<!-- Navbar -->
 
-			<table class="table align-middle mb-0 bg-white mt-5">
-				<thead class="bg-light">
-					<th>Title</th>
-					<th>Description</th>
-					<th>Published</th>
-					<th>Actions</th>
-				</thead>
-				<tbody>
-					<tr>
-						<td>
-							<p class="fw-bold mb-1">Kate Hunington</p>
-						</td>
-						<td>
-							<p class="fw-normal mb-1">Designer</p>
-						</td>
-						<td>
-							<span class="badge badge-warning rounded-pill d-inline">Awaiting</span>
-						</td>
-						<td>
-							<button type="button" class="btn btn-warning btn-rounded btn-sm fw-bold"
-								data-mdb-ripple-color="dark">
-								Edit
-							</button>
-							<button type="button" class="btn btn-danger btn-rounded btn-sm fw-bold"
-								data-mdb-ripple-color="dark">
-								Delete
-							</button>
-						</td>
-					</tr>
-				</tbody>
-			</table>
+		<table class="table align-middle mb-0 bg-white mt-5 " border="1">
+			<thead class="bg-light">
+				<th>ID</th>
+				<th class="w-55 p-3">Title</th>
+				<th class="w-25 p-3">Description</th>
+				<th>Published</th>
+				<th>Actions</th>
+			</thead>
+			<tbody>
+				<!-- <tr>
+					<td>
+						<p class="fw-bold mb-1">Kate Hunington</p>
+					</td>
+					<td>
+						<p class="fw-normal mb-1">Designer</p>
+					</td>
+					<td>
+						<span class="badge badge-warning rounded-pill d-inline">Awaiting</span>
+					</td>
+					<td>
+						<button type="button" class="btn btn-warning btn-rounded btn-sm fw-bold"
+							data-mdb-ripple-color="dark">
+							Edit
+						</button>
+						<button type="button" class="btn btn-danger btn-rounded btn-sm fw-bold"
+							data-mdb-ripple-color="dark">
+							Delete
+						</button>
+					</td>
+				</tr> -->
+			</tbody>
+		</table>
+
+		<!-- Modal -->
+		<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLabel">Create New Tutorial</h5>
+				<button type="button" class="btn-close" data-mdb-ripple-init data-mdb-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<form action="/tutorials" method="post" class="row needs-validation" novalidate>
+						<div class="col-md-12 mb-3">
+						  <label for="title" class="form-label">Tutorial Title:</label>
+						  <input type="text" class="form-control" id="title" name="title" placeholder="Enter a catchy title" required>
+						  <div class="invalid-feedback">
+							Please provide a title for your tutorial.
+						  </div>
+						</div>
+						<div class="col-md-12 mb-3">
+						  <label for="content" class="form-label">Tutorial Content:</label>
+						  <textarea class="form-control" id="content" name="content" rows="10" required></textarea>
+						  <div class="invalid-feedback">
+							Please enter the content of your tutorial.
+						  </div>
+						</div>
+						<div class="col-md-12 mb-3 d-flex justify-content-between align-items-center">
+						  <div class="form-check">
+							<input class="form-check-input" type="checkbox" value="true" id="published" name="published">
+							<label class="form-check-label" for="published">
+							  Publish Now
+							</label>
+						  </div>
+						</div>
+						
+					  </form>
+				</div>
+				<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-mdb-ripple-init data-mdb-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary bCreate" data-mdb-ripple-init>Create Tutorial</button>
+				</div>
+			</div>
+			</div>
+		</div>
 
 
-			<!-- MDB -->
-			<script type="text/javascript"
-				src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.3.2/mdb.umd.min.js"></script>
+		<!-- MDB -->
+		<script type="text/javascript"
+			src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.3.2/mdb.umd.min.js"></script>
 
-			<script>
-				fetch('https://api-crud-yrvv.onrender.com/api/tutorials')
-				.then(res => res.json())
-				.then(json => {
-				let tr = '';
+		<script src="script.js"></script>
+</body>
 
-				let published = '';
-
-
-			json.forEach(element => {
-				if(element.published == 1){
-					published = '<span class="badge badge-warning rounded-pill d-inline">Awaiting</span>';
-				}else{
-					published = '<span class="badge badge-success rounded-pill d-inline">Publish</span>';
-				}
-
-			console.log(element.published)	
-			tr += `
-							<tr>
-							<td>
-							<p class="fw-bold mb-1">${element.title}</p>
-							</td>
-							<td>
-							<p class="fw-normal mb-1">${element.description}</p>
-							</td>
-							<td>
-							${published}
-							</td>
-							<td>
-							<button type="button" class="btn btn-warning btn-rounded btn-sm fw-bold" data-mdb-ripple-color="dark">
-								Edit
-							</button>
-							<button type="button" class="btn btn-danger btn-rounded btn-sm fw-bold" data-mdb-ripple-color="dark">
-								Delete
-							</button>
-							</td>
-						</tr>
-							`;
-			});
-
-						document.querySelector('tbody').innerHTML = tr;
-					})
-			</script>
-		</body>
-
-		</html>
+</html>
