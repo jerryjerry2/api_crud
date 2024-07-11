@@ -88,6 +88,6 @@ function getData(){
                                 `;
             });
 
-        document.querySelector('tbody').insertAdjacentHTML('afterbegin', tr);
+        document.querySelector('tbody').innerHTML = tr;
     })
 }
