@@ -45,8 +45,15 @@ document.querySelector('.bCreate').onclick = function(){
 //Delete
 function deleteItem(tr){
     console.log(tr.parentElement.parentElement.cells[0].innerText);
+
     let id = tr.parentElement.parentElement.cells[0].innerText;
-    fetch('https://api-crud-yrvv.onrender.com/api/tutorials/' + id, {method:"DELETE"})
+
+    fetch('https://api-crud-yrvv.onrender.com/api/tutorials/' + id, {
+        method:"DELETE",
+        headers: { 
+            'Content-type': 'application/json'
+        } 
+    })
     .then(res=>res.json())
     .then(json=>{
         getData();
