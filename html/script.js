@@ -55,7 +55,6 @@ function deleteItem(tr){
     .then(json=>{
         console.log(json)
         getData();
-        
     })
 }
 
