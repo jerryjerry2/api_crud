@@ -47,7 +47,6 @@ function deleteItem(tr){
 }
 
 function getData(){
-    document.querySelector('tbody').innerHTML = '';
     fetch('https://api-crud-yrvv.onrender.com/api/tutorials')
     .then(res => res.json())
     .then(json => {
