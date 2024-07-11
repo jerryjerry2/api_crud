@@ -5,6 +5,7 @@ const myModal = new mdb.Modal(document.getElementById('exampleModal'), {
 getData();
 
 document.querySelector('.bAdd').onclick = function(){
+    document.querySelector('.frm').reset(); 
     myModal.show();
 }
 
