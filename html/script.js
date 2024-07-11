@@ -50,17 +50,12 @@ function deleteItem(tr){
 
     fetch('https://api-crud-yrvv.onrender.com/api/tutorials/' + id, {
         method:"DELETE",
-        headers: {
-            'Access-Control-Allow-Origin': '*',
-            'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
-        }
     })
     .then(res=>res.json())
     .then(json=>{
         getData();
         console.log(json)
     })
-    .catch(error => console.log('error', error));
 }
 
 function getData(){
