@@ -50,11 +50,14 @@ function deleteItem(tr){
 
     fetch('https://api-crud-yrvv.onrender.com/api/tutorials/' + id, {
         method:"DELETE",
-        headers: { 
-            'Accept': 'application/json',
-              'Content-Type': 'application/json'
-        },
-        redirect: 'follow' 
+        headers: {
+            'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept, Z-Key',
+        'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
+    "Content-type": "application/json",
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.69 Safari/537.36"
+    
+        }
     })
     .then(res=>res.json())
     .then(json=>{
