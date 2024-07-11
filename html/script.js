@@ -51,14 +51,17 @@ function deleteItem(tr){
     fetch('https://api-crud-yrvv.onrender.com/api/tutorials/' + id, {
         method:"DELETE",
         headers: { 
-            'Content-type': 'application/json'
-        } 
+            'Accept': 'application/json',
+              'Content-Type': 'application/json'
+        },
+        redirect: 'follow' 
     })
     .then(res=>res.json())
     .then(json=>{
         getData();
         console.log(json)
     })
+    .catch(error => console.log('error', error));
 }
 
 function getData(){
