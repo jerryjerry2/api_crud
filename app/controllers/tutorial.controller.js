@@ -9,6 +9,12 @@ exports.create = (req, res) => {
     });
   }
 
+  if (!req.body.title) {
+    res.status(400).send({
+      message: "Content can not be empty!"
+    });
+  }
+
   // Create a Tutorial
   const tutorial = new Tutorial({
     title: req.body.title,
