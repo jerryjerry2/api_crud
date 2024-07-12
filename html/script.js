@@ -35,7 +35,7 @@ document.querySelector('.bCreate').onclick = function(){
         })
       .then(res=>res.json())
       .then(json=>{
-        console.log(json);
+        console.log(json.message);
         getData();
       })
 
