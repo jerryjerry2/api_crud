@@ -35,12 +35,8 @@ document.querySelector('.bCreate').onclick = function(){
         })
       .then(res=>res.json())
       .then(json=>{
-        if(json.message == 'Content can not be empty!'){
-            alert('Please input title')
-        }else{
-            getData();
-        }
-        
+        console.log(json.message);
+        getData();
       })
 
     myModal.hide();
